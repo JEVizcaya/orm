@@ -2,6 +2,7 @@
 require 'vendor/autoload.php';
 require 'database.php';
 use App\Models\Actor;
+use App\Models\Film;
 /*
 crear nuevo registro
 $actor=new Actor;
@@ -15,7 +16,7 @@ $actors = Actor::all();
 foreach ($actors as $actor) {
     echo $actor->first_name . "<br>";
 } */
- 
+ /*
  use App\Models\Film;
  $peliculas=Film::all();
 
@@ -24,6 +25,21 @@ foreach ($peliculas as $value) {
     foreach ($value->actors as $a) {
         echo $a->first_name.",";
     }
+    echo "<br>";*/
+    use App\Models\User;
+ 
+    $actor=Actor::find(5);
+    echo $actor->first_name;
     echo "<br>";
-    
-}
+    $pelicula=Film::find(3);
+    foreach ($pelicula->actors as $key => $value) {
+        echo $value->first_name." , ";
+    }
+    echo "<br>";
+    $pelicula->actors()->attach($actor->actor_id);
+    $pelicula=Film::find(3);
+    foreach ($pelicula->actors as $key => $value) {
+        echo $value->first_name." , ";
+    }    
+
+
