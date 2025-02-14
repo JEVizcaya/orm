@@ -17,7 +17,7 @@ foreach ($actors as $actor) {
     echo $actor->first_name . "<br>";
 } */
  /*
- use App\Models\Film;
+ 
  $peliculas=Film::all();
 
 foreach ($peliculas as $value) {
