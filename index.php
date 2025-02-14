@@ -26,7 +26,7 @@ foreach ($peliculas as $value) {
         echo $a->first_name.",";
     }
     echo "<br>";*/
-    use App\Models\User;
+
  
     $actor=Actor::find(5);
     echo $actor->first_name;
